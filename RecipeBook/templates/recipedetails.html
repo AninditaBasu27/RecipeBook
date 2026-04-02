@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}
+<title>RECIPES DETAILS</title>
+{% endblock title %}
+
+
+{% block style %}
+{% load static %}
+<title>RECIPE DETAILS</title>
+<link rel="stylesheet" href={% static "recipedetails.css" %}>    
+{% endblock style %}
+
+{% load static %}
+{% block content %}
+
+<div class="recipe-container">
+    <h1 class="title">{{ post.title }}</h1>
+
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="recipe-image">
+    {% endif %}
+
+    <p class="meta"><span>Category:</span> {{ post.category }}</p>
+    <p class="description">{{ post.description|linebreaks }}</p>
+
+    <div class="section">
+        <h2>🛒 Ingredients</h2>
+        <p>{{ post.ingredients|linebreaks }}</p>
+    </div>
+
+    <div class="section">
+        <h2>👩‍🍳 Instructions</h2>
+        <p>{{ post.steps|linebreaks }}</p>
+    </div>
+
+    <div class="footer">
+        <div class="like-section">
+       <form action="{% url 'liked_recipes' post.id %}" method="POST" >
+            {% csrf_token %}
+            {% if user in like %}
+                <button type="submit" class="like-btn liked">💔 Unlike</button>
+            {% else %}
+                <button type="submit" class="like-btn">{{like}} ❤️ Like</button>
+            {% endif %}
+        </form>
+        </div>
+
+        <form action="{% url 'addToFavouriterecipes' post.id %}" method="POST" class="favorite-form">
+            {% csrf_token %}
+            <button type="submit" class="favorite-btn">
+                {% if user in post.favourite.all %}
+                    <span class="heart">❤️</span> Favorited ({{ favorites }})
+                {% else %}
+                    <span class="heart">🤍</span> Add to Favorites ({{ favourites }})
+                {% endif %}
+            </button>
+        </form>
+
+
+        <p><strong>❤️ Created at:</strong>{{post.created_at}}</p>
+        <p><em>Posted by:</em> {{ post.user.username }}</p>
+
+        <form method="post" class="search-bar">
+            {% csrf_token %}
+                <input type="text" placeholder="Add a comment..."   name = "comment_text" required>
+                <button type="submit" class=" btn" name="comment_submit">Post</button>
+        </form>
+                {%for comment in comments %}
+                    <div class="comment-box">
+                        <p><strong>{{ comment.user.username }}:</strong> {{ comment.text }}</p>
+                        <p class="comment-time">{{ comment.created_at }}</p>
+                    </div>
+                {% empty %}
+                    <p>No comments yet. Be the first to comment!</p>
+                {% endfor %}
+           
+
+</div>
+
+
+{% endblock content %}
+

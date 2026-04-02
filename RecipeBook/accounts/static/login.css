@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+            font-family: Arial, sans-serif;
+            background:url("https://live-production.wcms.abc-cdn.net.au/3daf358784e3e82e0ec532e944091186?impolicy=wcms_crop_resize&cropH=2000&cropW=3000&xPos=0&yPos=0&width=862&height=575") no-repeat center center fixed;
+            display: flex;
+            background-size: cover;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: darken;
+}
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(255, 86, 86, 0.3);
+            width: 300px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .login-box h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-box label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+
+        .login-box input[type="text"],
+        .login-box input[type="email"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .login-box input[type="submit"],
+        .login-box input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 6px;
+            background: #2193b0;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-box input[type="reset"] {
+            background: #ff4d4d;
+        }
+
+        .login-box input[type="submit"]:hover {
+            background: #176d7a;
+        }
+
+        .login-box input[type="reset"]:hover {
+            background: #cc0000;
+        }
+
+        .login-box p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-box a {
+            color: #2193b0;
+            text-decoration: none;
+        }
+
+        .login-box a:hover {
+            text-decoration: underline;
+        }

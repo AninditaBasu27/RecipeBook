@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d7d499;
+   
+    
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c88585;
+    padding: 10px 20px;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+
+.left img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.logo-text{
+    font-size: 27px;
+    font-weight: bold;
+    color: white;
+    font-family: cursive;
+}
+
+.s1{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.s1:hover{
+    color: rgb(135, 8, 71);
+    transition: all 0.3s ease;
+    transform: scaleX(1.2);
+}
+.right{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+.btn1{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgb(95, 40, 99);
+    color: rgb(255, 255, 255);
+}
+.btn1:hover{
+    background-color: rgb(90, 216, 244);
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+    transform: scaleX(1.1);
+}
+
+.btn2{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgb(135, 8, 71);
+    color: white;
+}
+
+.btn2:hover{
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+    transform: scaleX(1.1);
+}
+
+@media (max-width: 835px) {
+    
+    .left, .right {
+        gap: 10px;
+    }
+    nav{
+        padding: 20px 80px;
+        font-size: small;
+    }
+.btn1, .btn2{
+    padding: 5px 10px;
+    font-size: 12px;
+    
+}
+
+.left>span{
+    font-size: 15px;}
+}
+
+@media (max-width: 792px) {
+    nav{
+        
+        gap: 10px;
+        padding: 20px 30px;
+        
+    }
+    .left, .right {
+        gap: 5px;
+    }
+    .s1{
+        display: none;
+    }
+}
+.settings-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 20px 0px;
+}
+
+/* Search Section */
+.search-section {
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  /* margin: 30px 0; */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 5px 10px;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background: transparent;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.search-bar .btn {
+  background: #de0909d7;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-bar .btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+.messages {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.popup {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+  /* animation: fadeIn 0.5s ease-in-out; */
+  position: relative;
+  min-width: 250px;
+}
+
+/* Success = Green */
+.popup.success {
+  background-color: #28a745;
+}
+
+/* Error = Red */
+.popup.error {
+  background-color: #dc3545;
+}
+
+/* Warning = Orange */
+.popup.warning {
+  background-color: #ffc107;
+  color: #ffffff;
+}
+
+/* Info = Blue */
+.popup.info {
+  background-color: #17a2b8;
+}
+
+/* Close Button */
+.popup .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 20px;
+  color: white;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.greeting {
+  margin-right: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn10, .btn20 {
+  display:none;
+}

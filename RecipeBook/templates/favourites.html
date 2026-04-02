@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block style %}
+{% load static %}
+
+<link rel="stylesheet" href={% static "favourites.css" %}>    
+{% endblock style %}
+
+
+{% block content %}
+
+<header>
+    <h1>My Favourites</h1>
+    <p>Delicious recipes for everyday cooking 🍳</p>
+  </header>
+
+   <div class="container">
+
+    {% for recipe in favourites %}
+        <div class="recipe-card">
+            <img src="{{recipe.recipe.image.url}}" alt="{{recipe.image.url}}">
+            <h2>{{recipe.recipe.title}}</h2>
+            <p>{{recipe.recipe.description | truncatewords:20}}<br><br></p>
+            <div class="button-group">
+                {% comment %} <a href="{% url "recipedetails" recipe.id %}" class="view-recipe-btn">View </a> {% endcomment %}
+               <button onclick="location.href='{% url 'recipedetails' recipe.recipe.id %}'" class= "view-recipe-btn">View Recipe</button>
+            </div>
+        </div>
+
+    {% empty %}
+        <p>No recipes found.</p>
+
+    {% endfor %}
+    </div>
+  
+    <footer>
+        <p>&copy; 2025 My RecipeBook | Made with ❤️</p>
+    </footer>
+
+{% endblock content %}

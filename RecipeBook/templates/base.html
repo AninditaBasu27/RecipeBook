@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static %}
+<head>
+    {% block title %}
+    
+    {% endblock title %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO MY BLOG</title>
+    <link rel="stylesheet" href={% static "base.css" %}>
+    {% block style %}
+    
+    {% endblock style %}
+</head>
+<body>
+    
+    <nav>
+            
+
+        <div class="left">
+            <img src="{% static "assets/recipe-book.png" %}" alt="nav logo">
+            <span class="logo-text"><b>RecipeBook</b></span>
+            <a class = "s1" href="{% url 'home' %}">Home</a>
+            <a class = "s1" href="{% url 'addrecipe' %}">Add Recipes</a>
+            <a class = "s1" href="{% url 'recipes' %}">Recipes</a>            
+            <a class = "s1" href="{% url 'myrecipe' %}">My Recipes</a>
+            <a class = "s1" href="{% url 'favourites' %}">Favourites</a>
+            
+            
+        </div>
+        <div class="right">
+            <section class="search-section">
+                <form action="{% url 'recipes' %}" method="GET" class="search-bar">
+                <input type="text" placeholder="Search recipes..." name="search" value="{{ request.GET.search }}">
+                <button type="submit" class=" btn">Search </button>
+                </form>
+            </section>
+
+
+           {% if user.is_authenticated %}
+           <a class = "btn1" href="{% url 'logout' %}">Logout</a>
+           
+           {% else %}
+           
+           <a class = "btn1" href="{% url 'register' %}">Register</a>
+            <a class = "btn2" href="{% url 'login' %}">Login</a>
+           {% endif %}
+            
+            
+            {% comment %} <img src="assets/food.png" alt="settings" class="settings-icon"> {% endcomment %}
+            
+        </div>
+        
+    </nav>
+    
+    <nav>
+        {% if user.is_authenticated %}
+            <span class="greeting">Hi, {{ user.username }} 👋</span>
+        {% else %}
+            <a class="btn10" href="{% url 'register' %}">Register</a>
+            <a class="btn20" href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </nav>
+
+    <div>
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="popup {{ message.tags }}">
+                {{ message }}
+                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock content %}
+    </div>
+</div>
+</body>
+</html>

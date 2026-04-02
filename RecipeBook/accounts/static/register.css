@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    background: url("https://plus.unsplash.com/premium_photo-1663126351065-741a1d338b5d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVjaXBlc3xlbnwwfHwwfHx8MA%3D%3D") no-repeat center center fixed;
+    /* justify-content: center; */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+
+
+.register-container {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 350px;
+    margin-top: 100px
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #010101;
+    font-weight: bold; 
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #4CAF50;
+    text-decoration: none;
+}

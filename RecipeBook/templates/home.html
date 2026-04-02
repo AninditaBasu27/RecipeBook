@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href={% static "home.css" %}>    
+{% endblock style %}
+
+{% block content %}
+<section class="hero">
+    <h1>Cook, Share & Explore</h1>
+    <p>Your guide to mouth-watering recipes and cooking inspiration</p>
+    {% comment %} <button><a href="{% url 'recipes' %}">Start Cooking</a></button> {% endcomment %}
+    <button onclick="location.href='{% url 'recipes' %}'">Start Cooking</button>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section">
+    <h2>Recipe Categories</h2>
+    <div class="categories">
+      <div class="card">
+        <img src="https://media.istockphoto.com/id/668030702/photo/set-of-three-kinds-of-gin-tonic.jpg?s=612x612&w=0&k=20&c=n2NyINsmc5Ma7_Yow2JnZJ4rk-LlYjD925bbw2NTmUA=" alt="Italian">
+        <h3>Drinks & Beverages</h3>
+        <p>Refreshing fizz and cool sparkle .</p>
+          <form action="{% url 'recipes' %}" method="GET">
+                <input type="hidden" placeholder="Search recipes..." name="search" value="Drinks & Beverages">
+                <button type="submit" name="cat_wise" value="true">Explore </button>
+          </form>
+      </div>
+
+      <div class="card">
+        <img src="https://recipesblob.oetker.in/assets/01b9310b57e640e293a88ff3a5df5332/1272x764/garden-veg-salad.webp" alt="Healthy Salads">
+        <h3>Healthy Salads</h3>
+        <p>Fresh, nutritious salads for a healthy lifestyle.</p>
+        <form action="{% url 'recipes' %}" method="GET">
+                <input type="hidden" placeholder="Search recipes..." name="search" value="Healthy Salads">
+                <button type="submit" name="cat_wise" value="true">Explore </button>
+          </form>
+      </div>
+
+      <div class="card">
+        <img src="https://www.shutterstock.com/image-photo/trifle-raspberry-dessert-600nw-1186964662.jpg" alt="Desserts">
+        <h3>Desserts & Sweets</h3>
+        <p>Sweet treats and indulgent desserts you’ll love.</p>
+        <form action="{% url 'recipes' %}" method="GET">
+                <input type="hidden" placeholder="Search recipes..." name="search" value="Desserts & Sweets">
+                <button type="submit" name="cat_wise" value="true">Explore </button>
+          </form>
+      </div>
+
+      <div class="card">
+        <img src="https://lh3.googleusercontent.com/Zqq-1xIVqyV1Fpm28-FUmauRAnRyS46jSpp14nkGum3jRKZmXPZc1vhcfKivzR--7yUwe3dcB5rzy7ntqyXEuzteNMLAv5A_l1RO6BoM=w1000?s=300" alt="Quick Snacks">
+        <h3>Quick Snacks</h3>
+        <p>"Snack attack! We've got you covered.</p>
+        <form action="{% url 'recipes' %}" method="GET">
+                <input type="hidden" placeholder="Search recipes..." name="search" value="Quick Snacks">
+                <button type="submit" name="cat_wise" value="true">Explore </button>
+          </form>
+      </div>
+
+      <div class="card">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/029/858/402/small_2x/of-tandoori-chicken-as-a-dish-in-a-high-end-restaurant-generative-ai-photo.jpg" alt="Non Vegiterian">
+        <h3>Non-Vegetarian</h3>
+        <p>I would argue that non-veg is not an identity but an expression of a cultural value.</p>
+        <form action="{% url 'recipes' %}" method="GET">
+                <input type="hidden" placeholder="Search recipes..." name="search" value="Non-Vegetarian">
+                <button type="submit" name="cat_wise" value="true">Explore </button>
+          </form>
+      </div>
+
+      <div class="card">
+        <img src="https://media.istockphoto.com/id/1300132756/photo/vegan-gluten-free-creamy-avocado-pesto-pasta.jpg?s=612x612&w=0&k=20&c=TvgmPCWenif-TdSM02Idsi55eEoxNIYOBhCiSGvZsP4=" alt="Vegetarian">
+        <h3>Vegetarian & Vegan</h3>
+        <p>Delicious vegetarian recipes for every meal.</p>
+        <form action="{% url 'recipes' %}" method="GET">
+                <input type="hidden" placeholder="Search recipes..." name="search" value="Vegetarian & Vegan">
+                <button type="submit" name="cat_wise" value="true">Explore </button>
+          </form>
+        </div>
+      
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 RecipeBook | Made with ❤️ for food lovers</p>
+  </footer>
+
+
+{% endblock content %}

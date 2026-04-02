@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>MY RECIPES</title>
+{% endblock title %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href={% static "myrecipe.css" %}>    
+{% endblock style %}
+
+
+{% block content %}
+<header>
+    <h1>My Recipe Blog</h1>
+    <p>Delicious recipes for everyday cooking 🍳</p>
+  </header>
+
+   <div class="container">
+
+    {% comment %} <div class="recipe-card">
+      <img src="https://img.freepik.com/free-photo/penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table_2829-19744.jpg" alt="Pasta">
+      <h2>Delicious Pasta</h2>
+      <p>A simple and tasty homemade pasta recipe with fresh ingredients.</p>
+    </div>
+
+    <div class="recipe-card">
+      <img src="https://floweraura-blog-img.s3.ap-south-1.amazonaws.com/Designer-Birthday-Cakes-2019/Image-1.jpg" alt="Cake">
+      <h2>Chocolate Cake</h2>
+      <p>Rich and moist chocolate cake perfect for any celebration.</p>
+    </div>
+
+    <div class="recipe-card">
+        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2014/05/Epic-summer-salad-hub-2646e6e.jpg" alt="Salad">
+        <h2>Fresh Salad</h2>
+        <p>A refreshing mix of greens, veggies, and dressing.</p>
+      </div> {% endcomment %}
+
+    {% for recipe in recipes %}
+        <div class="recipe-card">
+            <img src="{{recipe.image.url}}" alt="{{recipe.image}}">
+            <h2>{{recipe.title}}</h2>
+            <p>{{recipe.description | truncatewords:20}}<br><br></p>
+            <a href="{% url "recipedetails" recipe.id %}" class="view-recipe-btn">View Recipe</a>
+             <a href="{% url "recipedelete" recipe.id %}" class="view-recipe-btn1">Delete</a>
+        </div>
+
+    {% empty %}
+        <p>No recipes found.</p>
+
+    {% endfor %}
+    </div>
+  
+    <footer>
+        <p>&copy; 2025 My RecipeBook | Made with ❤️</p>
+    </footer>
+
+{% endblock content %}
