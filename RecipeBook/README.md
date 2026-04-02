@@ -1,8 +1,4 @@
-A professional README is essential for showcasing your work to recruiters or collaborators. Since your project is a Django-based Recipe Book, the README should clearly explain what the app does, how to set it up, and the technologies used.
 
-Here is a template you can copy and paste into a file named `README.md` in your project root.
-
------
 
 # RecipeBook 🍳
 
